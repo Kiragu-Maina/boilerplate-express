@@ -4,14 +4,8 @@ const path = require('path');
 
 // Serve asset files from the '/public' path
 app.use(express.static(__dirname + 'public'));
-
+const absolutePath = __dirname + '/views/index.html';
 // Define a route to serve the HTML file
 app.get('/', function(req, res) {
-  const absolutePath = __dirname + '/views/index.html';
-  res.sendFile(absolutePath, function (err) {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    }
-  });
+    res.sendFile('views/index.html', {root: __dirname })
 });
