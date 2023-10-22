@@ -7,5 +7,5 @@ app.use(express.static(__dirname + 'public'));
 const absolutePath = __dirname + '/views/index.html';
 // Define a route to serve the HTML file
 app.get('/', function(req, res) {
-    res.sendFile('views/index.html', {root: __dirname })
+    res.sendFile(absolutePath)
 });
