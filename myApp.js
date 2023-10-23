@@ -1,8 +1,10 @@
 require('dotenv').config()
+const bodyParser =   require('body-parser')
 const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use(bodyParser.urlencoded({extended: false}));
 // Serve asset files from the '/public' path
 app.use('/public', express.static(__dirname + '/public'));
 app.use(function(req, res, next) {
