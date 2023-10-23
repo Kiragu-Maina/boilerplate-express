@@ -41,7 +41,7 @@ app.route('/name').get(function(req, res){
   const full_name = `${first} ${last}`;
   res.json({ name: full_name })
 }).post(function(req, res){
-  const { first, last } = req.query;
+  const { first, last } = req.body;
   const full_name = `${first} ${last}`;
   res.json({ name: full_name })
 });
