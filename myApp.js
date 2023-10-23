@@ -5,6 +5,10 @@ const path = require('path');
 
 // Serve asset files from the '/public' path
 app.use('/public', express.static(__dirname + '/public'));
+app.use(function(req, res, next) {
+  console.log(req.method +' '+ req.path +' '+'-'+' '+ req.ip);
+  next();
+});
 const absolutePath = __dirname + '/views/index.html';
 // Define a route to serve the HTML file
 app.get('/', function(req, res) {
