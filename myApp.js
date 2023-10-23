@@ -40,6 +40,11 @@ app.route('/name').get(function(req, res){
   const { first, last } = req.query;
   const full_name = `${first} ${last}`;
   res.json({ name: full_name })
+}).post(function(req, res){
+  const { first, last } = req.query;
+  const full_name = `${first} ${last}`;
+  res.json({ name: full_name })
 });
+
 
 module.exports = app;
